@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Vasilij Melnychuck", "Igor Petruh"]
   gem.email         = ["isqrel@gmail.com", "pro100igor@gmail.com"]
   gem.description   = %q{ Gem for linkfying your text }
-  gem.summary       = %q{ This gem parses urls from your text and create links from it }
+  gem.summary       = %q{ Smartlinks converts your palin-text urls, twitter-like accounts and hashtag links to html a tags }
   gem.homepage      = "https://github.com/SqREL/smartlinks"
 
   gem.files         = `git ls-files`.split($/)
