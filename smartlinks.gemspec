@@ -6,8 +6,8 @@ require 'smartlinks/version'
 Gem::Specification.new do |gem|
   gem.name          = "smartlinks"
   gem.version       = Smartlinks::VERSION
-  gem.authors       = ["Vasilij Melnychuck"]
-  gem.email         = ["isqrel@gmail.com"]
+  gem.authors       = ["Vasilij Melnychuck", "Igor Petruh"]
+  gem.email         = ["isqrel@gmail.com", "pro100igor@gmail.com"]
   gem.description   = %q{ Gem for linkfying your text }
   gem.summary       = %q{ This gem parses urls from your text and create links from it }
   gem.homepage      = "https://github.com/SqREL/smartlinks"
