@@ -1,0 +1,2 @@
+module Smartlinks
+end

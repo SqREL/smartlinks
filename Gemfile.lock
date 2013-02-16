@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    smartlink (0.0.1)
+    smartlinks (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -21,4 +21,4 @@ PLATFORMS
 
 DEPENDENCIES
   rspec
-  smartlink!
+  smartlinks!

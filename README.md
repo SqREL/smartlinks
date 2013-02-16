@@ -1,4 +1,4 @@
-SmartLink
+SmartLinks
 =========
 
 Tool for linkifying text
