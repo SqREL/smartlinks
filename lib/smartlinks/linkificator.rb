@@ -28,7 +28,12 @@ module Smartlinks
 
     def link
       @text.gsub! PAT_LINK do |url|
-        "<a href=\"#{url}\">#{url}</a>"
+        if @params[:params]
+          tag_params = @params[:params].map{|k, v| " #{k}=\"#{v}\""}.join''
+          "<a href=\"#{url}\"#{tag_params}>#{url}</a>"
+        else
+          "<a href=\"#{url}\">#{url}</a>"
+        end
       end
     end
 
