@@ -51,7 +51,7 @@ describe Smartlinks do
   it "creates twitter-like links with custom domain" do
     text = "#dude, check out #rails framework"
     result = "<a href=\"http://example.com/dude?src=hash\">#dude</a>, check out <a href=\"http://example.com/rails?src=hash\">#rails</a> framework"
-    Smartlinks.linkify(text, hash: "http://example.com/%s?src=hash").should eql(result)
+    Smartlinks.linkify(text, hashtag: "http://example.com/%s?src=hash").should eql(result)
   end
 
   it "converts url to link with some link params" do
