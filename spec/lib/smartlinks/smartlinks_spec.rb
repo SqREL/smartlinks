@@ -45,13 +45,19 @@ describe Smartlinks do
   it "creates twitter hash links" do
     text = "#dude, check out #rails framework"
     result = "<a href=\"https://twitter.com/search?q=%23dude&src=hash\">#dude</a>, check out <a href=\"https://twitter.com/search?q=%23rails&src=hash\">#rails</a> framework"
-    Smartlinks::linkify(text).should eql(result)
+    Smartlinks.linkify(text).should eql(result)
   end
 
   it "creates twitter-like links with custom domain" do
     text = "#dude, check out #rails framework"
     result = "<a href=\"http://example.com/dude?src=hash\">#dude</a>, check out <a href=\"http://example.com/rails?src=hash\">#rails</a> framework"
-    Smartlinks::linkify(text, hash: "http://example.com/%s?src=hash").should eql(result)
+    Smartlinks.linkify(text, hash: "http://example.com/%s?src=hash").should eql(result)
+  end
+
+  it "converts url to link with some link params" do
+    text = "http://example.com/3 Word http://lorem.com/id/1 seperator http://test.com/foo/bar Foo"
+    result = "<a href=\"http://example.com/3\" class=\"main\" rel=\"nofollow\">http://example.com/3</a> Word <a href=\"http://lorem.com/id/1\" class=\"main\" rel=\"nofollow\">http://lorem.com/id/1</a> seperator <a href=\"http://test.com/foo/bar\" class=\"main\" rel=\"nofollow\">http://test.com/foo/bar</a> Foo"
+    Smartlinks.linkify(text, params: { class: "main", rel: "nofollow" }).should eql(result)
   end
 
   private
