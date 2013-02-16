@@ -1,6 +1,6 @@
 module Smartlinks
   PAT_LINK = %r{
-    (?: ((?:ed2k|ftp|http|https|irc|mailto|news|gopher|nntp|telnet|webcal|xmpp|callto|feed|svn|urn|aim|rsync|tag|ssh|sftp|rtsp|afs):)// | www\. )
+    (?: ((?:ed2k|ftp|http|https|irc|news|gopher|nntp|telnet|webcal|xmpp|callto|feed|svn|urn|aim|rsync|tag|ssh|sftp|rtsp|afs):)// | www\. )
     [^\s<]+
   }x
   PAT_EMAIL = %r{
