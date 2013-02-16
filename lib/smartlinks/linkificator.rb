@@ -15,9 +15,9 @@ module Smartlinks
     PAT_HASH = %r{#(\w+)}
     # ------------------------------------
 
-    def initialize(text, params={})
+    def initialize(text, attrs={})
       @text = text
-      @params = params
+      @attrs = attrs
     end
 
     def email
@@ -28,9 +28,9 @@ module Smartlinks
 
     def link
       @text.gsub! PAT_LINK do |url|
-        if @params[:params]
-          tag_params = @params[:params].map{|k, v| " #{k}=\"#{v}\""}.join''
-          "<a href=\"#{url}\"#{tag_params}>#{url}</a>"
+        if @attrs[:params]
+          params = @attrs[:params].map{|k, v| " #{k}=\"#{v}\""}.join''
+          "<a href=\"#{url}\"#{params}>#{url}</a>"
         else
           "<a href=\"#{url}\">#{url}</a>"
         end
@@ -41,8 +41,8 @@ module Smartlinks
       @text.gsub!(PAT_ACCOUNT) do
         space, account = $~[1], $~[2]
 
-        if @params[:account]
-          url = @params[:account].sub "%s", account
+        if @attrs[:account]
+          url = @attrs[:account].sub "%s", account
           "#{space}<a href=\"#{url}\">@#{account}</a>"
         else
           "#{space}<a href=\"https://twitter.com/#{account}\">@#{account}</a>"
@@ -54,8 +54,8 @@ module Smartlinks
       @text.gsub!(PAT_HASH) do
         hashtag = $~[1]
 
-        if @params[:hashtag]
-          url = @params[:hashtag].sub "%s", hashtag
+        if @attrs[:hashtag]
+          url = @attrs[:hashtag].sub "%s", hashtag
           "<a href=\"#{url}\">##{hashtag}</a>"
         else
           "<a href=\"https://twitter.com/search?q=%23#{hashtag}&src=hash\">##{hashtag}</a>"
