@@ -18,4 +18,9 @@ module Smartlinks
 
     text
   end
+  
+  def twitter_account(text, params={})
+    text.gsub!(/@\w+/) { |twitter| "https://twitter.com/#{twitter}" }
+    text
+  end
 end
