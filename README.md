@@ -43,4 +43,4 @@ Also you can define additional links params, for example:
 ## Credits
 
 * Vasilij Melnychuk ([@SqREL](https://twitter.com/sqrel))
-* Igor Petruh ([@troyanryller](https://twitter.com/troyanryller))
+* Igor Petruh ([@Troyanryller](https://twitter.com/troyanryller))
