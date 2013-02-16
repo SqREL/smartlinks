@@ -19,6 +19,11 @@ describe Smartlinks do
     Smartlinks::linkify(text).should eql(result)
   end
 
+  it "do not modifyes if allready link" do
+    text = "Allready <a href=\"http://google.com\">linkifyed</a> url"
+    Smartlinks::linkify(text).should eql(text)
+  end
+
   it "modifyes plaintext mail account to link" do
     text = "Reply to admin@test.com and check user@gmail.com account"
     result = "Reply to <a href=\"mailto:admin@test.com\">admin@test.com</a> and check <a href=\"mailto:user@gmail.com\">user@gmail.com</a> account"
