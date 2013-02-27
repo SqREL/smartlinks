@@ -1,6 +1,9 @@
 module Smartlinks
 
   def self.linkify(text, attrs={})
+    # Ensure text is not nil
+    return nil unless text
+
     linkificator = Linkificator.new text, attrs
 
     # NOTE: Order matters!

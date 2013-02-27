@@ -2,6 +2,11 @@ require 'spec_helper'
 
 describe Smartlinks do
 
+  it "returns nil if input text it is nil" do
+    text = nil
+    Smartlinks.linkify(text).should eql(text)
+  end
+
   it "modifies http url" do
     text, result = data "http"
     Smartlinks.linkify(text).should eql(result)
